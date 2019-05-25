@@ -9,6 +9,7 @@ pipeline{
         stage("init"){
             steps{
                 echo 'init'
+                sh 'cd terraform && terraform init -input=false'
             }
         }
 
