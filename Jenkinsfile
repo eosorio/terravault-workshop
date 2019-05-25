@@ -15,13 +15,14 @@ pipeline{
 
         stage("validate") {
             steps{
-                echo 'validating'
+                sh 'cd terraform && terraform validate'
             }
         }
 
         stage("plan") {
             steps{
                 echo 'Planning'
+                sh "cd terraform && terraform plan -input=false"
             }
         }
 
